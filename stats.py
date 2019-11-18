@@ -5,7 +5,7 @@ def parseScore(s):
     result = s.split(':')
     return int(result[0].strip()), int(result[1].strip())  
 
-class Game:
+class GameStats:
     def __init__(self, name, gameMap, score, position, playedTime, personalData, *args, **kwargs):
         super().__init__(*args, **kwargs)
         self.playerName = name
@@ -55,6 +55,9 @@ class Game:
     def points(self):
         return int(self.personalData[-1])
 
+    def rounds(self):
+        left, right = self.score
+        return int(left) + int(right)
     def __str__(self):
         return "{0}, {1}, {2}, {3}, {4}, {5}".format(self.playerName, self.gameMap, self.score, self.position, self. playedTime, self.result)
 
@@ -75,7 +78,7 @@ while i < len(data):
         continue
     if entry[0] == 'Turniejowy':
         if (score != None and gameMap != None and position != None):
-            games.append(Game(name, gameMap, score, position, playedTime, personalData))
+            games.append(GameStats(name, gameMap, score, position, playedTime, personalData))
             gameMap = name = score = position = playedTime = personalData = None
         gameMap = entry[1].strip()
     if entry[0] == "Czas" and entry[1] == "trwania":
@@ -94,9 +97,9 @@ while i < len(data):
         position = True
     i = i + 1
 
-games.append(Game(name, gameMap, score, position, playedTime, personalData))
+games.append(GameStats(name, gameMap, score, position, playedTime, personalData))
 won = drawn = lost = totalMinutes = totalseconds = 0
-psg = ping = kills = assist = death = points = mvp = 0 
+psg = ping = kills = assist = death = points = mvp = rounds = 0 
 gamesPerMap = dict()
 for g in games:
     print (g)
@@ -121,8 +124,7 @@ for g in games:
     death += g.deaths()
     points += g.points()
     mvp += g.mvps()
-
-
+    rounds += g.rounds()
 
 print("Won: {0}, Drawn: {1}, lost: {2}".format(won , drawn, lost))
 print("Minutes: {0}, Seconds: {1}".format(totalMinutes , totalseconds))
@@ -132,6 +134,14 @@ print("Hours: {0}, Minutes: {1}".format(hours , minutes))
 
 for m in gamesPerMap:
     print("Map: {0}, stats: {1}".format(m , gamesPerMap[m]))
+
+totalKills = kills
+totalDeaths = death
+totalAssist = assist
+totalMPVs = mvp
+kdRatio = round(totalKills/totalDeaths, 2)
+roundsPlayed = rounds
+
 
 avgPsg = round(psg/len(games),2)
 avgPing = round(ping/len(games),2)
@@ -148,3 +158,10 @@ print("avgAssist: {0}".format(avgAssist))
 print("avgDeath: {0}".format(avgDeath))    
 print("avgMvp: {0}".format(avgMvp))    
 print("avgPoints: {0}".format(avgPoints))    
+
+print("totalKills: {0}".format(totalKills))   
+print("totalDeaths: {0}".format(totalDeaths))    
+print("totalAssist: {0}".format(totalAssist))    
+print("totalMPVs: {0}".format(totalMPVs))    
+print("kdRatio: {0}".format(kdRatio))  
+print("roundsPlayed: {0}".format(roundsPlayed))  
