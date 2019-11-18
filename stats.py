@@ -1,4 +1,4 @@
-with open('csgo_stats.txt') as f:
+with open('data/csgo_stats.txt') as f:
     data = f.read().split('\n')
 
 def parseScore(s):
