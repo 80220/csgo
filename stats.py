@@ -1,4 +1,4 @@
-INPUTFILE = 'data/csgo_stats.txt'
+INPUTFILE = 'data/competitive.txt'
 PLAYERNAME = 'bifi'
 MATCHTOKEN = 'Turniejowy'
 MATCHTIMETOKEN = 'Czas trwania'
