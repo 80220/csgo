@@ -1,3 +1,8 @@
+### CSGO data
+
+[CSGO statistics](competitive_statistics.txt)  
+[CSGO info](csgo_info.txt)
+
 ### Requirements
 
 * python3 interpreter

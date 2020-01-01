@@ -1,3 +1,5 @@
+import datetime
+
 INPUTFILE = 'data/competitive.txt'
 PLAYERNAME = 'bifi'
 MATCHTOKEN = 'Turniejowy'
@@ -129,6 +131,7 @@ class GameStatistics:
         self.totalseconds = 0
         self.psg = 0
         self.ping = 0
+        self.ping_zero = 0
         self.kills = 0
         self.assist = 0
         self.death = 0
@@ -156,6 +159,8 @@ class GameStatistics:
             self.totalseconds += int(playedSeconds)
             self.psg += g.psg()
             self.ping += g.ping()
+            if(g.ping() == 0 ):                
+                self.ping_zero += 1
             self.kills += g.kills()
             self.assist += g.assists()
             self.death += g.deaths()
@@ -213,10 +218,75 @@ class DataFormatter:
         print("totalMPVs: {0}".format(totalMPVs))
         print("kdRatio: {0}".format(kdRatio))
         print("roundsPlayed: {0}".format(roundsPlayed))
+        print("kicked/left: {0}".format(self.gameStatistics.ping_zero))
 
+        f = open('competitive_statistics.txt', 'w')
+        output = "𝐏𝐥𝐚𝐲𝐞𝐫: {0}\n".format(PLAYERNAME)        
+        f.write(output)
+        output = "\n𝐆𝐚𝐦𝐞 𝐦𝐨𝐝𝐞: competitive 5v5\n"
+        f.write(output)
+        allGames = sum([self.gameStatistics.won, self.gameStatistics.drawn, self.gameStatistics.lost])
+        output = "\n𝐆𝐚𝐦𝐞𝐬 𝐩𝐥𝐚𝐲𝐞𝐝: {0}, 𝐖𝐨𝐧: {1}, 𝐃𝐫𝐚𝐰𝐧: {2}, 𝐋𝐨𝐬𝐭: {3}\n".format(allGames, self.gameStatistics.won, self.gameStatistics.drawn, self.gameStatistics.lost)
+        f.write(output)
+        output = "\n𝐆𝐚𝐦𝐞𝐬 𝐝𝐢𝐬𝐭𝐫𝐢𝐛𝐮𝐭𝐢𝐨𝐧 𝐩𝐞𝐫 𝐦𝐚𝐩:\n"
+        f.write(output)
+
+        for m in sorted(self.gameStatistics.gamesPerMap):
+            output = "▪️ {0}: {1} ({2}/{3}/{4})\n".format(m, sum(self.gameStatistics.gamesPerMap[m]), self.gameStatistics.gamesPerMap[m][0], self.gameStatistics.gamesPerMap[m][1], self.gameStatistics.gamesPerMap[m][2])
+            f.write(output)
+        output = "\n𝐈𝐧-𝐠𝐚𝐦𝐞 𝐭𝐨𝐭𝐚𝐥 𝐩𝐞𝐫𝐟𝐨𝐫𝐦𝐚𝐧𝐜𝐞:\n"
+        f.write(output)
+        output = "▪️ Total kills: {0}\n".format(totalKills)
+        f.write(output)
+        output = "▪️ Total deaths: {0}\n".format(totalDeaths)
+        f.write(output)
+        output = "▪️ Total assists: {0}\n".format(totalAssist)
+        f.write(output)
+        output = "▪️ Total MVPs: {0}\n".format(totalMPVs)
+        f.write(output)
+        output = "▪️ K/D ratio: {0}\n".format(kdRatio)
+        f.write(output)
+        output = "▪️ Rounds played: {0}\n".format(roundsPlayed)
+        f.write(output)
+        output = "\n𝐈𝐧-𝐠𝐚𝐦𝐞 𝐚𝐯𝐞𝐫𝐚𝐠𝐞 𝐩𝐞𝐫𝐟𝐨𝐫𝐦𝐚𝐧𝐜𝐞:\n"
+        f.write(output)
+        output = "▪️ Avg. Headshot: {0}%\n".format(avgPsg)
+        f.write(output)
+        output = "▪️ Avg. Ping: {0} ms\n".format(avgPing)
+        f.write(output)
+        output = "▪️ Avg. Kills: {0} 😃\n".format(avgKills)
+        f.write(output)
+        output = "▪️ Avg. Assists: {0} 😉\n".format(avgAssist)
+        f.write(output)
+        output = "▪️ Avg. Deaths: {0} 😡\n".format(avgDeath)
+        f.write(output)
+        output = "▪️ Avg. MVPs: {0} ⭐️\n".format(avgMvp)
+        f.write(output)
+        output = "▪️ Avg. Points: {0}\n".format(avgPoints)
+        f.write(output)
+        output = "\n𝐎𝐭𝐡𝐞𝐫:\n"
+        f.write(output)
+        output = "▪️ Kicked out or left: {0} times\n".format(self.gameStatistics.ping_zero)
+        f.write(output)
+        output = "\n𝐑𝐞𝐚𝐥 𝐓𝐢𝐦𝐞 𝐏𝐥𝐚𝐲𝐞𝐝:\n"
+        f.write(output)
+        output = "▪️ Competitive: {0} hours {1} minutes\n".format(hours, int(minutes))
+        f.write(output)
+      
+        output = "\n𝘓𝘢𝘴𝘵 𝘶𝘱𝘥𝘢𝘵𝘦𝘥: {0}".format(datetime.datetime.now())
+        f.write(output)
+
+        f.close()
+   
 
 data = loadInputdata()
 games = DataParser(data).parse()
 statistics = GameStatistics(games)
 statistics.calculate()
 DataFormatter(statistics).show()
+
+# CSGO:
+# https://github.com/80220/csgo
+
+# INSURGENCY:
+# <TBD>
