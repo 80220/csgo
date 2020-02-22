@@ -4,7 +4,7 @@ INPUTFILE = 'data/competitive.txt'
 PLAYERNAME = 'bifi'
 MATCHTOKEN = 'Turniejowy'
 MATCHTIMETOKEN = 'Czas trwania'
-
+WAITINGTIMETOKEN = 'Czas oczekiwania:'
 
 def loadInputdata():
     with open(INPUTFILE) as f:
@@ -13,7 +13,7 @@ def loadInputdata():
 
 
 class DataExtractor:
-    def __init__(self, name, gameMap, score, position, playedTime, personalData, *args, **kwargs):
+    def __init__(self, name, gameMap, score, position, playedTime, waitingTime, personalData, *args, **kwargs):
         super().__init__(*args, **kwargs)
         self.playerName = name
         self.gameMap = gameMap
@@ -21,6 +21,7 @@ class DataExtractor:
         self.position = position
         self.result = self.jugdeResult()
         self.playedTime = playedTime
+        self.waitingTime = waitingTime
         self.personalData = personalData
 
     def jugdeResult(self):
@@ -72,7 +73,7 @@ class DataExtractor:
         return int(left) + int(right)
 
     def __str__(self):
-        return "{0}, {1}, {2}, {3}, {4}, {5}".format(self.playerName, self.gameMap, self.score, self.position, self. playedTime, self.result)
+        return "{0}, {1}, {2}, {3}, {4}, {5}".format(self.playerName, self.gameMap, self.score, self.position, self.playedTime, self.waitingTime, self.result)
 
 
 class DataParser:
@@ -86,6 +87,7 @@ class DataParser:
         name = None
         score = None
         playedTime = None
+        waitingTime = None
         personalData = None
         position = None
 
@@ -98,11 +100,13 @@ class DataParser:
             if entry[0] == MATCHTOKEN:
                 if (score != None and gameMap != None and position != None):
                     games.append(DataExtractor(name, gameMap, score,
-                                               position, playedTime, personalData))
-                    gameMap = name = score = position = playedTime = personalData = None
+                                               position, playedTime, waitingTime, personalData))
+                    gameMap = name = score = position = playedTime = waitingTime = personalData = None
                 gameMap = entry[1].strip()
             if len(entry) > 1 and ' '.join([entry[0], entry[1]]) == MATCHTIMETOKEN:
                 playedTime = entry[-1]
+            if len(entry) > 1 and ' '.join([entry[0], entry[1]]) == WAITINGTIMETOKEN:
+                waitingTime = entry[-1]                
             if len(entry) == 3 and entry[1] == ":":
                 score = entry[0], entry[2]
             if entry[0] == PLAYERNAME:
@@ -116,7 +120,7 @@ class DataParser:
             i = i + 1
 
         games.append(DataExtractor(name, gameMap, score,
-                                   position, playedTime, personalData))
+                                   position, playedTime, waitingTime, personalData))
         return games
 
 
@@ -129,6 +133,8 @@ class GameStatistics:
         self.lost = 0
         self.totalMinutes = 0
         self.totalseconds = 0
+        self.totalWaitingMinutes = 0
+        self.totalWaitingseconds = 0
         self.psg = 0
         self.ping = 0
         self.ping_zero = 0
@@ -155,8 +161,12 @@ class GameStatistics:
                 self.gamesPerMap[g.gameMap][2] += 1
             playedMinutes = g.playedTime.split(":")[0]
             playedSeconds = g.playedTime.split(":")[1]
+            waitingMinutes = g.waitingTime.split(":")[0]
+            waitingSeconds = g.waitingTime.split(":")[1]            
             self.totalMinutes += int(playedMinutes)
             self.totalseconds += int(playedSeconds)
+            self.totalWaitingMinutes += int(waitingMinutes)
+            self.totalWaitingseconds += int(waitingSeconds)
             self.psg += g.psg()
             self.ping += g.ping()
             if(g.ping() == 0 ):                
@@ -183,6 +193,11 @@ class DataFormatter:
                      self.gameStatistics.totalseconds)/3600)
         minutes = (self.gameStatistics.totalMinutes * 60 +
                    self.gameStatistics.totalseconds) % 3600/60
+        waitingHours = int((self.gameStatistics.totalWaitingMinutes * 60 +
+                     self.gameStatistics.totalWaitingseconds)/3600)
+        waitingMinutes = (self.gameStatistics.totalWaitingMinutes * 60 +
+                   self.gameStatistics.totalWaitingseconds) % 3600/60
+
         print("Hours: {0}, Minutes: {1}".format(hours, minutes))
 
         for m in self.gameStatistics.gamesPerMap:
@@ -270,7 +285,7 @@ class DataFormatter:
         f.write(output)
         output = "\n𝐑𝐞𝐚𝐥 𝐓𝐢𝐦𝐞 𝐏𝐥𝐚𝐲𝐞𝐝:\n"
         f.write(output)
-        output = "▪️ Competitive: {0} hours {1} minutes\n".format(hours, int(minutes))
+        output = "▪️ Competitive: {0} hours {1} minutes, waiting in lobby: {2} hours {3} minutes\n".format(hours, int(minutes), waitingHours, int(waitingMinutes))
         f.write(output)
       
         output = "\n𝘓𝘢𝘴𝘵 𝘶𝘱𝘥𝘢𝘵𝘦𝘥: {0}".format(datetime.datetime.now())
