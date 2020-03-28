@@ -2,43 +2,43 @@
 
 𝐆𝐚𝐦𝐞 𝐦𝐨𝐝𝐞: competitive 5v5
 
-𝐆𝐚𝐦𝐞𝐬 𝐩𝐥𝐚𝐲𝐞𝐝: 436, 𝐖𝐨𝐧: 198, 𝐃𝐫𝐚𝐰𝐧: 36, 𝐋𝐨𝐬𝐭: 202
+𝐆𝐚𝐦𝐞𝐬 𝐩𝐥𝐚𝐲𝐞𝐝: 521, 𝐖𝐨𝐧: 231, 𝐃𝐫𝐚𝐰𝐧: 43, 𝐋𝐨𝐬𝐭: 247
 
 𝐆𝐚𝐦𝐞𝐬 𝐝𝐢𝐬𝐭𝐫𝐢𝐛𝐮𝐭𝐢𝐨𝐧 𝐩𝐞𝐫 𝐦𝐚𝐩:
 ▪️ Agency: 7 (3/1/3)
 ▪️ Austria: 1 (1/0/0)
 ▪️ Cache: 5 (2/1/2)
-▪️ Dust: 4 (1/1/2)
-▪️ Inferno: 70 (31/5/34)
-▪️ Mirage: 19 (9/0/10)
+▪️ Dust: 45 (16/5/24)
+▪️ Inferno: 90 (41/7/42)
+▪️ Mirage: 34 (14/0/20)
 ▪️ Nuke: 85 (39/6/40)
 ▪️ Office: 39 (14/6/19)
 ▪️ Overpass: 65 (30/6/29)
 ▪️ Ruby: 1 (1/0/0)
 ▪️ Train: 69 (29/5/35)
-▪️ Vertigo: 71 (38/5/28)
+▪️ Vertigo: 80 (41/6/33)
 
 𝐈𝐧-𝐠𝐚𝐦𝐞 𝐭𝐨𝐭𝐚𝐥 𝐩𝐞𝐫𝐟𝐨𝐫𝐦𝐚𝐧𝐜𝐞:
-▪️ Total kills: 7073
-▪️ Total deaths: 7457
-▪️ Total assists: 1597
-▪️ Total MVPs: 781
+▪️ Total kills: 8506
+▪️ Total deaths: 8981
+▪️ Total assists: 1968
+▪️ Total MVPs: 971
 ▪️ K/D ratio: 0.95
-▪️ Rounds played: 10884
+▪️ Rounds played: 12988
 
 𝐈𝐧-𝐠𝐚𝐦𝐞 𝐚𝐯𝐞𝐫𝐚𝐠𝐞 𝐩𝐞𝐫𝐟𝐨𝐫𝐦𝐚𝐧𝐜𝐞:
-▪️ Avg. Headshot: 32.03%
-▪️ Avg. Ping: 23.77 ms
-▪️ Avg. Kills: 16.22 😃
-▪️ Avg. Assists: 3.66 😉
-▪️ Avg. Deaths: 17.1 😡
-▪️ Avg. MVPs: 1.79 ⭐️
-▪️ Avg. Points: 41.77
+▪️ Avg. Headshot: 32.75%
+▪️ Avg. Ping: 23.17 ms
+▪️ Avg. Kills: 16.33 😃
+▪️ Avg. Assists: 3.78 😉
+▪️ Avg. Deaths: 17.24 😡
+▪️ Avg. MVPs: 1.86 ⭐️
+▪️ Avg. Points: 42.01
 
 𝐎𝐭𝐡𝐞𝐫:
-▪️ Kicked out or left: 31 times
+▪️ Kicked out or left: 41 times
 
 𝐑𝐞𝐚𝐥 𝐓𝐢𝐦𝐞 𝐏𝐥𝐚𝐲𝐞𝐝:
-▪️ Competitive: 288 hours 41 minutes, waiting in lobby: 19 hours 21 minutes
+▪️ Competitive: 342 hours 27 minutes, waiting in lobby: 20 hours 38 minutes
 
-𝘓𝘢𝘴𝘵 𝘶𝘱𝘥𝘢𝘵𝘦𝘥: 2020-03-22 20:34:15.107841
+𝘓𝘢𝘴𝘵 𝘶𝘱𝘥𝘢𝘵𝘦𝘥: 2020-07-03 20:44:18.887452
