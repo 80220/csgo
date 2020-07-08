@@ -1,7 +1,7 @@
 import datetime
 
 INPUTFILE = 'data/competitive.txt'
-PLAYERNAME = 'bifi'
+PLAYERNAME = 'Zyg'
 MATCHTOKEN = 'Turniejowy'
 MATCHTIMETOKEN = 'Czas trwania'
 WAITINGTIMETOKEN = 'Czas oczekiwania:'
@@ -227,18 +227,18 @@ class DataFormatter:
         print("avgMvp: {0}".format(avgMvp))
         print("avgPoints: {0}".format(avgPoints))
 
-        print("totalKills: {0}".format(totalKills))
-        print("totalDeaths: {0}".format(totalDeaths))
-        print("totalAssist: {0}".format(totalAssist))
-        print("totalMPVs: {0}".format(totalMPVs))
-        print("kdRatio: {0}".format(kdRatio))
-        print("roundsPlayed: {0}".format(roundsPlayed))
-        print("kicked/left: {0}".format(self.gameStatistics.ping_zero))
+        print("{0:15} {1}".format("totalKills:", totalKills))
+        print("{0:15} {1}".format("totalDeaths:", totalDeaths))
+        print("{0:15} {1}".format("totalAssist:", totalAssist))
+        print("{0:15} {1}".format("totalMPVs:", totalMPVs))
+        print("{0:15} {1}".format("kdRatio:", kdRatio))
+        print("{0:15} {1}".format("roundsPlayed:", roundsPlayed))
+        print("{0:15} {1}".format("kicked/left:",self.gameStatistics.ping_zero))
 
         f = open('competitive_statistics.txt', 'w')
         output = "𝐏𝐥𝐚𝐲𝐞𝐫: {0}\n".format(PLAYERNAME)        
         f.write(output)
-        output = "\n𝐆𝐚𝐦𝐞 𝐦𝐨𝐝𝐞: competitive 5v5\n"
+        output = "\n𝐆𝐚𝐦𝐞 𝐦𝐨𝐝𝐞: competitive 5v5 (matchmaking only)\n"
         f.write(output)
         allGames = sum([self.gameStatistics.won, self.gameStatistics.drawn, self.gameStatistics.lost])
         output = "\n𝐆𝐚𝐦𝐞𝐬 𝐩𝐥𝐚𝐲𝐞𝐝: {0}, 𝐖𝐨𝐧: {1}, 𝐃𝐫𝐚𝐰𝐧: {2}, 𝐋𝐨𝐬𝐭: {3}\n".format(allGames, self.gameStatistics.won, self.gameStatistics.drawn, self.gameStatistics.lost)
@@ -247,37 +247,37 @@ class DataFormatter:
         f.write(output)
 
         for m in sorted(self.gameStatistics.gamesPerMap):
-            output = "▪️ {0}: {1} ({2}/{3}/{4})\n".format(m, sum(self.gameStatistics.gamesPerMap[m]), self.gameStatistics.gamesPerMap[m][0], self.gameStatistics.gamesPerMap[m][1], self.gameStatistics.gamesPerMap[m][2])
+            output = "▪️ {0:15} {1:<4} ({2}/{3}/{4})\n".format(m, sum(self.gameStatistics.gamesPerMap[m]), self.gameStatistics.gamesPerMap[m][0], self.gameStatistics.gamesPerMap[m][1], self.gameStatistics.gamesPerMap[m][2])
             f.write(output)
         output = "\n𝐈𝐧-𝐠𝐚𝐦𝐞 𝐭𝐨𝐭𝐚𝐥 𝐩𝐞𝐫𝐟𝐨𝐫𝐦𝐚𝐧𝐜𝐞:\n"
         f.write(output)
-        output = "▪️ Total kills: {0}\n".format(totalKills)
+        output = "▪️ {0:15} {1}\n".format("Total kills", totalKills)
         f.write(output)
-        output = "▪️ Total deaths: {0}\n".format(totalDeaths)
+        output = "▪️ {0:15} {1}\n".format("Total deaths", totalDeaths)
         f.write(output)
-        output = "▪️ Total assists: {0}\n".format(totalAssist)
+        output = "▪️ {0:15} {1}\n".format("Total assists", totalAssist)
         f.write(output)
-        output = "▪️ Total MVPs: {0}\n".format(totalMPVs)
+        output = "▪️ {0:15} {1}\n".format("Total MVPs", totalMPVs)
         f.write(output)
-        output = "▪️ K/D ratio: {0}\n".format(kdRatio)
+        output = "▪️ {0:15} {1}\n".format("K/D ratio", kdRatio)
         f.write(output)
-        output = "▪️ Rounds played: {0}\n".format(roundsPlayed)
+        output = "▪️ {0:15} {1}\n".format("Rounds played", roundsPlayed)
         f.write(output)
         output = "\n𝐈𝐧-𝐠𝐚𝐦𝐞 𝐚𝐯𝐞𝐫𝐚𝐠𝐞 𝐩𝐞𝐫𝐟𝐨𝐫𝐦𝐚𝐧𝐜𝐞:\n"
         f.write(output)
-        output = "▪️ Avg. Headshot: {0}%\n".format(avgPsg)
+        output = "▪️ {0:15} {1} %\n".format("Avg. Headshot", avgPsg)
         f.write(output)
-        output = "▪️ Avg. Ping: {0} ms\n".format(avgPing)
+        output = "▪️ {0:15} {1} ms\n".format("Avg. Ping", avgPing)
         f.write(output)
-        output = "▪️ Avg. Kills: {0} 😃\n".format(avgKills)
+        output = "▪️ {0:15} {1} 😃\n".format("Avg. Kills", avgKills)
         f.write(output)
-        output = "▪️ Avg. Assists: {0} 😉\n".format(avgAssist)
+        output = "▪️ {0:15} {1} 😉\n".format("Avg. Assists", avgAssist)
         f.write(output)
-        output = "▪️ Avg. Deaths: {0} 😡\n".format(avgDeath)
+        output = "▪️ {0:15} {1} 😡\n".format("Avg. Deaths", avgDeath)
         f.write(output)
-        output = "▪️ Avg. MVPs: {0} ⭐️\n".format(avgMvp)
+        output = "▪️ {0:15} {1} ⭐️\n".format("Avg. MVPs", avgMvp)
         f.write(output)
-        output = "▪️ Avg. Points: {0}\n".format(avgPoints)
+        output = "▪️ {0:15} {1}\n".format("Avg. Points", avgPoints)
         f.write(output)
         output = "\n𝐎𝐭𝐡𝐞𝐫:\n"
         f.write(output)

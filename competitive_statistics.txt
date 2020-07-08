@@ -1,44 +1,46 @@
-𝐏𝐥𝐚𝐲𝐞𝐫: bifi
+𝐏𝐥𝐚𝐲𝐞𝐫: Zyg
 
-𝐆𝐚𝐦𝐞 𝐦𝐨𝐝𝐞: competitive 5v5
+𝐆𝐚𝐦𝐞 𝐦𝐨𝐝𝐞: competitive 5v5 (matchmaking only)
 
-𝐆𝐚𝐦𝐞𝐬 𝐩𝐥𝐚𝐲𝐞𝐝: 525, 𝐖𝐨𝐧: 233, 𝐃𝐫𝐚𝐰𝐧: 45, 𝐋𝐨𝐬𝐭: 247
+𝐆𝐚𝐦𝐞𝐬 𝐩𝐥𝐚𝐲𝐞𝐝: 703, 𝐖𝐨𝐧: 314, 𝐃𝐫𝐚𝐰𝐧: 61, 𝐋𝐨𝐬𝐭: 328
 
 𝐆𝐚𝐦𝐞𝐬 𝐝𝐢𝐬𝐭𝐫𝐢𝐛𝐮𝐭𝐢𝐨𝐧 𝐩𝐞𝐫 𝐦𝐚𝐩:
-▪️ Agency: 7 (3/1/3)
-▪️ Austria: 1 (1/0/0)
-▪️ Cache: 5 (2/1/2)
-▪️ Dust: 46 (16/6/24)
-▪️ Inferno: 92 (42/8/42)
-▪️ Mirage: 34 (14/0/20)
-▪️ Nuke: 85 (39/6/40)
-▪️ Office: 39 (14/6/19)
-▪️ Overpass: 65 (30/6/29)
-▪️ Ruby: 1 (1/0/0)
-▪️ Train: 69 (29/5/35)
-▪️ Vertigo: 81 (42/6/33)
+▪️ Agency          7    (3/1/3)
+▪️ Austria         1    (1/0/0)
+▪️ Cache           5    (2/1/2)
+▪️ Dust            53   (21/6/26)
+▪️ Inferno         101  (48/8/45)
+▪️ Mirage          34   (14/0/20)
+▪️ Mutiny          1    (1/0/0)
+▪️ Nuke            106  (52/7/47)
+▪️ Office          39   (14/6/19)
+▪️ Overpass        130  (55/14/61)
+▪️ Ruby            1    (1/0/0)
+▪️ Train           118  (52/10/56)
+▪️ Vertigo         105  (50/8/47)
+▪️ de_anubis       2    (0/0/2)
 
 𝐈𝐧-𝐠𝐚𝐦𝐞 𝐭𝐨𝐭𝐚𝐥 𝐩𝐞𝐫𝐟𝐨𝐫𝐦𝐚𝐧𝐜𝐞:
-▪️ Total kills: 8595
-▪️ Total deaths: 9058
-▪️ Total assists: 1989
-▪️ Total MVPs: 986
-▪️ K/D ratio: 0.95
-▪️ Rounds played: 13091
+▪️ Total kills     11617
+▪️ Total deaths    12337
+▪️ Total assists   2708
+▪️ Total MVPs      1372
+▪️ K/D ratio       0.94
+▪️ Rounds played   17587
 
 𝐈𝐧-𝐠𝐚𝐦𝐞 𝐚𝐯𝐞𝐫𝐚𝐠𝐞 𝐩𝐞𝐫𝐟𝐨𝐫𝐦𝐚𝐧𝐜𝐞:
-▪️ Avg. Headshot: 32.82%
-▪️ Avg. Ping: 23.19 ms
-▪️ Avg. Kills: 16.37 😃
-▪️ Avg. Assists: 3.79 😉
-▪️ Avg. Deaths: 17.25 😡
-▪️ Avg. MVPs: 1.88 ⭐️
-▪️ Avg. Points: 42.12
+▪️ Avg. Headshot   33.5 %
+▪️ Avg. Ping       21.7 ms
+▪️ Avg. Kills      16.52 😃
+▪️ Avg. Assists    3.85 😉
+▪️ Avg. Deaths     17.55 😡
+▪️ Avg. MVPs       1.95 ⭐️
+▪️ Avg. Points     42.58
 
 𝐎𝐭𝐡𝐞𝐫:
-▪️ Kicked out or left: 41 times
+▪️ Kicked out or left: 74 times
 
 𝐑𝐞𝐚𝐥 𝐓𝐢𝐦𝐞 𝐏𝐥𝐚𝐲𝐞𝐝:
-▪️ Competitive: 345 hours 0 minutes, waiting in lobby: 20 hours 42 minutes
+▪️ Competitive: 464 hours 7 minutes, waiting in lobby: 23 hours 43 minutes
 
-𝘓𝘢𝘴𝘵 𝘶𝘱𝘥𝘢𝘵𝘦𝘥: 2020-07-05 10:46:27.675006
+𝘓𝘢𝘴𝘵 𝘶𝘱𝘥𝘢𝘵𝘦𝘥: 2020-11-22 17:06:40.778644
